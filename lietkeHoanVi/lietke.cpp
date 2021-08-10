@@ -3,7 +3,7 @@
 #define MAX 200
 using namespace std;
 
-//ĐỀ BÀI : tính số hoán vị khi xếp N số tự nhiên khác nhau thành vòng trong
+//ĐỀ BÀI : tính số hoán vị khi xếp N số tự nhiên khác nhau thành vòng tròn
  
 int n;
 int mark[MAX] = { 0 };//Đánh dấu chưa có phần tử nào sử dụng hết
