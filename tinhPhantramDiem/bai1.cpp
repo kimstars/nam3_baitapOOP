@@ -28,7 +28,7 @@ int main(){
     int arr[n];
     for (int i = 0 ; i < n; i++){
         arr[i] = rand()%10 + 1;
-        cout << arr[i] << endl;
+        // cout << arr[i] << endl;
     }
 
     int diem[11] = {0,1,2,3,4,5,6,7,8,9,10};

@@ -41,7 +41,7 @@ void Try(int k){
 
 int main(){
     init();
-    cout << "Cac hoan vi vong tron la : \n"
+    cout << "Cac hoan vi vong tron la : \n";
     Try(2);
     cout <<"\n"<< n << " phan tu co " << count << " hoan vi vong tron ~~~ (n-1)!";
 }
