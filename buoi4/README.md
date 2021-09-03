@@ -1,3 +1,5 @@
+# BÀI TẬP OOP BUỔI 4 - CTK -MTA
+
 ## bai 1 : 
 cho mot mang n so nguyen
 xay dung cac phuong thuc
