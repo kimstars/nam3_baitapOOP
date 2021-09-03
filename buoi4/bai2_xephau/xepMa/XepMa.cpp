@@ -3,6 +3,7 @@
 
 using namespace std;
 int a[20][20] = {0};
+bool ok[20][20] = {0};
 int n = 8;
 
 int X[8] = {-2, -2, -1, -1, 1, 1, 2, 2};
@@ -10,28 +11,28 @@ int Y[8] = {-1, 1, -2, 2, -2, 2, -1, 1};
 
 void danhso(int i, int j)
 {
-    a[i][j] = 1;
+    ok[i][j] = 1;
     for (int t = 0; t < 8; t++)
     {
         int x = i + X[t];
         int y = j + Y[t];
-        if (x < n && x >= 0 && y < n && y >= 0 && a[x][y] == 0)
+        if (x < n && x >= 0 && y < n && y >= 0 && ok[x][y] == 0)
         {
-            a[x][y] = 2;
+            ok[x][y] = 2;
         }
     };
 }
 
 void huyso(int i, int j)
 {
-    a[i][j] = 0;
+    ok[i][j] = 0;
     for (int t = 0; t < 8; t++)
     {
         int x = i + X[t];
         int y = j + Y[t];
-        if (x < n && x >= 0 && y < n && y >= 0 && a[x][y] == 0)
+        if (x < n && x >= 0 && y < n && y >= 0 && ok[x][y] == 0)
         {
-            a[x][y] = 0;
+            ok[x][y] = 0;
         }
     };
 }
@@ -55,7 +56,7 @@ bool check(int i, int j)
     {
         int x = i + X[t];
         int y = j + Y[t];
-        if (x >= n || x < 0 && y >= n && y < 0 && a[x][y] != 0)
+        if (x >= n || x < 0 || y >= n || y < 0 || a[x][y] || ok[x][y] )
         {
             return false;
         }
@@ -69,21 +70,15 @@ void Try(int i)
     {
         if (check(k, i))
         {
-            danhso(k, i);
+            danhso(k,i);
+            cout <<" ok\n";
             Try(i + 1);
             if (i <= 8)
                 Print(8);
-            else
-            {
-                break;
-            }
-            huyso(k, i);
-        }
-        else
-        {
-            return;
+            huyso(k,i);
         }
     }
+        
 }
 
 int main()
