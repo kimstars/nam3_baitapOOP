@@ -8,7 +8,7 @@ using namespace std;
 int n;
 int mark[MAX] = { 0 };//Đánh dấu chưa có phần tử nào sử dụng hết
 int a[MAX];//Lưu hoán vị vào mảng A
-int count;
+int count = 0;
 
 void init(){
     a[1] = 1;// cố định một phần tử, tránh trùng lặp
