@@ -1,32 +1,47 @@
-#pragma once
-#include <bits/stdc++.h>
-#include "Point.h"
-using namespace std;
+#include "HinhHoc.h"
+
 #define Pi 3.14
 
-
-class Tron : public Point
+class Tron : public HinhHoc
 {
-    private:
-        Point tam;
-        double R;
-    public:
-        Tron(){
-            tam.Set(0,0);
-            R = 0;
-        }
+private:
+    double R;
 
-        Tron(Point A, double R){
-            this->tam = A;
-            this->R = R;
-        }
+public:
+    Tron();
 
-        double DienTich(){
-            return Pi*pow(R,2);
-        }
+    Tron(double R);
 
-        void Nhap(){
-            cout << "Nhap toa do tam ";
-        }
+    virtual void setDienTich();
+
+    void Nhap();
+
+    void Print();
 
 };
+Tron::Tron()
+{
+    R = 0;
+}
+
+Tron::Tron(double R)
+{
+    this->R = R;
+}
+
+void Tron::setDienTich()
+{
+    dientich = Pi * pow(R, 2);
+}
+
+void Tron::Nhap()
+{
+    cout << "Nhap ban kinh: ";
+    cin >> R;
+}
+void Tron::Print()
+{
+
+    cout << "Hinh tron: R =  " << R << endl;
+    HinhHoc::Print();
+}

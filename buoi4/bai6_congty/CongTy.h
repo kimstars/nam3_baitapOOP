@@ -232,6 +232,7 @@ void CongTy::Khac(vector<NhanVien *> &NV){
         case 2:
             cout << NV[indexmin]->getName() << "---------> Salary : "<< min << endl;
             pressAnyKey();
+            return;
             break;
         case 0:
             cout << "Ban chon thoat. Tam biet\n";

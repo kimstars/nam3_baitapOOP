@@ -1,12 +1,9 @@
-#include "Tamgiac.h"
-#include "HCN.h"
-#include "Tron.h"
-#include "Point.h"
+#include "ThucThi.h"
 
 
-int main(){
-    
-    
-    
+int main()
+{
+    ThucThi a;
+    a.thucthi();
 
 }
