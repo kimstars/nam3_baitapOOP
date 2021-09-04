@@ -2,13 +2,35 @@
 
 using namespace std;
 
-struct data
+typedef  vector<int> vi;
+typedef long long int64;
+#define int int64
+struct Vecto
 {
 	int x;
 	int y;
-} typedef data;
+	void operator-=(Vecto v){
+		x -= v.x;
+		y -= v.y;
+	}
+
+	bool operator>(Vecto v){
+		if(v.y == y){
+			return x > v.x;
+		}else{
+			return y > v.y;
+		}
+	}
+};
+
+class Stack: public 
+
+Vecto a[20000];
+int n;
+
 
 int arr[10];
+
 void khoitao()
 {
 	for (int i = 1; i <= 4; i++)
@@ -17,7 +39,7 @@ void khoitao()
 	}
 }
 
-int sinhhv4()
+int sinhhv4() //sinh hoán vị của 4
 {
 	int vt = -1;
 	for (int i = 4; i > 1; i--)
@@ -64,13 +86,13 @@ int main()
 	cin >> n;
 	for (int k = 1; k <= n; k++)
 	{
-		data toado[5];
+		Vecto toado[5];
 		for (int i = 1; i <= 4; i++)
 		{
 			cin >> toado[i].x >> toado[i].y;
 		}
 		khoitao();
-		data dinh[5];
+		Vecto dinh[5];
 		int kt = 0;
 		while (1)
 		{

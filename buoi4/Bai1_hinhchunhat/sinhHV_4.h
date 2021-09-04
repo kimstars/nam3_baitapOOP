@@ -1,16 +1,4 @@
-#include <bits/stdc++.h>
-using namespace std;
 
-
-
-int arr[10];
-void khoitao()
-{
-	for (int i = 1; i <= 4; i++)
-	{
-		arr[i] = i;
-	}
-}
 
 int sinhhv4()
 {
@@ -49,26 +37,4 @@ int sinhhv4()
 	}
 	else
 		return -1;
-}
-
-
-void PrintArr(){
-    for (size_t i = 1; i <= 4 ; i++)
-    {
-        /* code */
-        cout << arr[i] << " ";
-    }
-    cout << endl;
-}
-
-
-int main(){
-    khoitao();
-    while (sinhhv4()!=-1)
-    {
-        PrintArr();
-      
-    }
-    
-
 }
