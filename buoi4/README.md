@@ -51,7 +51,7 @@ tim HCN co cac canh song song voi cac truc toa do, nhỏ nhất
 
 tìm bao lồi nhỏ nhất chứa N điểm trên.
 
-- # [code] chua lam duoc
+- # [code](Bai1_hinhchunhat/class/main.cpp)
 
 ## bài 2: 
 cho bàn cờ vua là một ma trận 8x8(không xoay bàn cờ) 
@@ -70,6 +70,7 @@ các giá trị ma trận giá trị 0 1 (hàm sinh ngẫu nhiên)
 0 : ô không có mìn
 Một người ở i, j ko có mìn, được phép di chuyển theo 4 hướng X(i,j) = 0
 để người đó ra khỏi ma trận thì có bao nhiêu đường đi?
+
 ***xong***
 
 output.txt
