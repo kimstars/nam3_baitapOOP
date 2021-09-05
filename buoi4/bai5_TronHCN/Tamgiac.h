@@ -66,7 +66,7 @@ double Tamgiac::canhCA()
 void Tamgiac::setDienTich()
 {
     double p = (A + B + C) / 2;
-    dientich = p * (p + A) * (p + B) * (p + C);
+    dientich = sqrt(p * (p + A) * (p + B) * (p + C));
 }
 void Tamgiac::Print()
 {

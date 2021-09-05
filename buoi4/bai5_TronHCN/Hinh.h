@@ -12,7 +12,7 @@ class Hinh{
         
         double getDienTich(){ return dientich;}
         virtual void Print(){
-            cout << "Dien tich = " << dientich << endl;
+            cout <<fixed << setprecision(3)<< "Dien tich = " << dientich << endl;
         }
         virtual void setDienTich()= 0;
 };

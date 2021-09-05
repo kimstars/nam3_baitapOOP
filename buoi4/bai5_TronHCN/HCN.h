@@ -5,7 +5,7 @@ class HCN : public Hinh
 private:
     double ChieuDai;
     double ChieuRong;
-    string name = "Hinh chu nhat";
+    const string name = "Hinh chu nhat";
 
 public:
     HCN();
