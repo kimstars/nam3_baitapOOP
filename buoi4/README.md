@@ -50,7 +50,9 @@ tim HCN co cac canh song song voi cac truc toa do, nhỏ nhất
 
 tìm bao lồi nhỏ nhất chứa N điểm trên.
 
-- # [code](Bai1_hinhchunhat/class/main.cpp)
+  - [code](Bai1_hinhchunhat/class/main.cpp)
+
+<span style="color:red"> **gan xong**</span>
 
 ## bài 2: 
 cho bàn cờ vua là một ma trận 8x8(không xoay bàn cờ) 
@@ -70,10 +72,12 @@ các giá trị ma trận giá trị 0 1 (hàm sinh ngẫu nhiên)
 Một người ở i, j ko có mìn, được phép di chuyển theo 4 hướng X(i,j) = 0
 để người đó ra khỏi ma trận thì có bao nhiêu đường đi?
 
-***xong***
-
 output.txt
 (3,3) (2,3) (1,3)
+
+<span style="color:red"> **xong**</span>
+
+
 
 - ### [code](bai3_domin/domin.cpp)
 
@@ -85,7 +89,8 @@ Một người đi du lịch, khi trở về mua n đồ vật,
 đồ vật ai : trọng lượng, bi : giá trị của đồ (số nguyên)
 trọng lượng ko quá m cho trước.
 Hỏi cần chọn ra đồ vật gì và tổng giá trị max ?
-***xong***
+<span style="color:red"> **xong**</span>
+
 - ### [code](bai4_nguoiDulich)
 
 ## bài 5: 
@@ -93,7 +98,8 @@ cho một danh sách gồm n1 hình tròn, n2 hình cn, n3 hình tam giác
 xây dựng lớp mô tả bài toán.
 trong các hình đã cho hình nào có diện tích lớn nhất
 - ### [code](bai5_TronHCN)
-  ***xong***
+<span style="color:red"> **xong**</span>
+
 ## bài 6: 
 trong một công ty có n người 
 có hai loại: 	
@@ -108,5 +114,7 @@ tìm người có mức lương nhỏ nhất trong công ty?
 
 tính tổng số lương công ty phải chi trả mỗi tháng?
 
-***xong***
+
+<span style="color:red"> **xong**</span>
+
 - ### [code](bai6_congty)
