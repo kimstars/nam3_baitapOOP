@@ -17,7 +17,7 @@ typedef long long int64;
 
 
 
-int64 ccw(Point w, Point u, Point v)
+int64 ccw(Point w, Point u, Point v) //counterclockwise : ngược chiều kim đồng hồ 
 { // Xem từ w --> u --> v là rẽ trái (>0), đi thẳng (0) hay rẽ phải (<0)
     u -= w;
     v -= w;

@@ -1,6 +1,5 @@
 #pragma once
 #include <bits/stdc++.h>
-#include <ctime>
 using namespace std;
 
 class Point
