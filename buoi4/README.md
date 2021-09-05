@@ -50,7 +50,7 @@ tim HCN co cac canh song song voi cac truc toa do, nhỏ nhất
 
 tìm bao lồi nhỏ nhất chứa N điểm trên.
 
- ### - [code](Bai1_hinhchunhat/class/main.cpp)
+ ### - [code](Bai1_hinhchunhat/)
 
 <span style="color:red"> **gan xong**</span>
 

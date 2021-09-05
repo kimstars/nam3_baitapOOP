@@ -5,5 +5,4 @@ int main()
 {
     ThucThi a;
     a.thucthi();
-    
 }
