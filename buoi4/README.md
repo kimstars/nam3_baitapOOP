@@ -11,7 +11,6 @@ xay dung cac phuong thuc
 10
 1 2 2 3 3 4 5 5 5 6
 
-
 ## bai2 : 
 cho da thuc F(x) = 
 
@@ -81,7 +80,6 @@ output.txt
 ***chua lam file***
 
 
-  
 ## bài 4: 
 Một người đi du lịch, khi trở về mua n đồ vật, 
 đồ vật ai : trọng lượng, bi : giá trị của đồ (số nguyên)
@@ -95,8 +93,9 @@ cho một danh sách gồm n1 hình tròn, n2 hình cn, n3 hình tam giác
 xây dựng lớp mô tả bài toán.
 trong các hình đã cho hình nào có diện tích lớn nhất
 - ### [code](bai5_TronHCN)
-  ***chua xong***
-## bài 6: trong một công ty có n người 
+  ***xong***
+## bài 6: 
+trong một công ty có n người 
 có hai loại: 	
 		
 		công nhân sx = 5000*số lượng sp
@@ -109,5 +108,5 @@ tìm người có mức lương nhỏ nhất trong công ty?
 
 tính tổng số lương công ty phải chi trả mỗi tháng?
 
-***chua xong***
+***xong***
 - ### [code](bai6_congty)

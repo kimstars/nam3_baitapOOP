@@ -1,32 +1,43 @@
-#include "HinhHoc.h"
+#include "Hinh.h"
 
 #define Pi 3.14
 
-class Tron : public HinhHoc
+class Tron : public Hinh
 {
-private:
-    double R;
+    private:
+        string name = "Tron";
+        double R;
 
-public:
-    Tron();
+    public:
+        Tron();
 
-    Tron(double R);
+        Tron(double R);
 
-    virtual void setDienTich();
+        void setDienTich();
 
-    void Nhap();
+        void Nhap();
 
-    void Print();
+        void Print();
+        double getDienTich(){
+            Hinh::getDienTich();
+        }
+
+        string getName(){
+            return name;
+        }
 
 };
 Tron::Tron()
 {
     R = 0;
+    setDienTich();
 }
 
 Tron::Tron(double R)
 {
     this->R = R;
+    setDienTich();
+
 }
 
 void Tron::setDienTich()
@@ -38,10 +49,12 @@ void Tron::Nhap()
 {
     cout << "Nhap ban kinh: ";
     cin >> R;
+    setDienTich();
+
 }
 void Tron::Print()
 {
 
-    cout << "Hinh tron: R =  " << R << endl;
-    HinhHoc::Print();
+    cout << "Hinh tron: R =  " << R  << " | ";
+    Hinh::Print();
 }

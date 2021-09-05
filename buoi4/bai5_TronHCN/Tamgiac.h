@@ -1,8 +1,9 @@
-#include "HinhHoc.h"
+#include "Hinh.h"
 
-class Tamgiac : public HinhHoc
+class Tamgiac : public Hinh
 {
 private:
+    string name = "Tam giac";
     double A;
     double B;
     double C;
@@ -10,13 +11,21 @@ private:
 public:
     Tamgiac();
     Tamgiac(double A, double B, double C);
-    void Nhap();
+    virtual void Nhap();
 
     double canhAB();
     double canhBC();
     double canhCA();
     virtual void setDienTich();
     void Print();
+    double getDienTich()
+    {
+        Hinh::getDienTich();
+    }
+    string getName()
+    {
+        return name;
+    }
 };
 
 Tamgiac::Tamgiac()
@@ -28,15 +37,17 @@ Tamgiac::Tamgiac(double A, double B, double C)
     this->A = A;
     this->B = B;
     this->C = C;
+    setDienTich();
 }
 void Tamgiac::Nhap()
 {
-    cout << "Nhap canh AB :";
+    cout << "Nhap canh AB : ";
     cin >> A;
-    cout << "Nhap canh BC :";
+    cout << "Nhap canh BC : ";
     cin >> B;
-    cout << "Nhap canh CA :";
+    cout << "Nhap canh CA : ";
     cin >> C;
+    setDienTich();
 }
 
 double Tamgiac::canhAB()
@@ -59,6 +70,6 @@ void Tamgiac::setDienTich()
 }
 void Tamgiac::Print()
 {
-    cout << "Tam giac AB =" << A << " : BC =" << B << " : CA = " << C;
-    HinhHoc::Print();
+    cout << "Tam giac AB =" << A << " : BC =" << B << " : CA = " << C << " | ";
+    Hinh::Print();
 }

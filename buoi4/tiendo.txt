@@ -1,3 +1,4 @@
 bai3 do min : ok
 bai4 cai tui : ok QHD + QL
-bai2 xep
+bai2 xep hau
+bai1 xong bao goi
