@@ -131,6 +131,49 @@ void PrintHuong()
     }
 }
 
+ofstream outfile("output.txt");
+
+void ghiFile()
+{
+
+    for (int i = 0; i < res.size(); i++)
+    {
+        // cout << res[i] << endl;
+        // Oy = x,  Ox = y
+        int a = y, b = x;
+        string t = res[i];
+        for (int j = 0; j < t.length(); j++)
+        {
+            if (t[j] == 'D')
+            {
+                outfile << "(" << a << "," << b + 1 << ") ";
+                b++;
+            }
+
+            if (t[j] == 'T')
+            {
+                outfile << "(" << a << "," << b - 1 << ") ";
+                b--;
+            }
+
+            if (t[j] == 'R')
+            {
+                outfile << "(" << a + 1 << "," << b << ") ";
+                a++;
+            }
+
+            if (t[j] == 'L')
+            {
+                outfile << "(" << a - 1 << "," << b << ") ";
+                a--;
+            }
+        }
+        outfile << endl;
+    }
+
+    outfile.close();
+}
+
 int main()
 {
     srand(time(0));
@@ -158,9 +201,10 @@ int main()
             cout << "1. In theo toa do\n";
             cout << "2. In theo huong (D: Down, T: Top, L: Left, R: Right) \n";
             cout << "3. Show ma tran \n";
+            cout << "4. Ghi ket qua ra file \n";
             cout << "0. Thoat \n";
             cout << "> ";
-            while (cin >> c && c != 1 && c != 2  && c != 3 && c != 0)
+            while (cin >> c && c != 1 && c != 2 && c != 3 && c != 4 && c != 0)
             {
                 cout << "\nNO FEATURE!\nAgain: ";
             }
@@ -177,8 +221,14 @@ int main()
                 system("pause");
                 system("cls");
                 break;
-             case 3:
-                PrintArr(m,n);
+            case 3:
+                PrintArr(m, n);
+                system("pause");
+                system("cls");
+                break;
+            case 4:
+                ghiFile();
+                cout << "ghi file thanh cong\n";
                 system("pause");
                 system("cls");
                 break;
@@ -188,6 +238,6 @@ int main()
             default:
                 break;
             }
-        }while(c != 0);
+        } while (c != 0);
     }
 }
