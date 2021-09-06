@@ -7,6 +7,7 @@ int a[100][100] = {0};
 bool ok[100][100] = {0};
 bool check = false;
 int m, n;
+int x, y;
 
 void genArray()
 {
@@ -46,14 +47,14 @@ void Try(int i, int j, string s)
     }
     else
     {
-        if (i == 0 || j == 0 || i == n - 1 || j == n - 1)
+        if (i == 0 || j == 0 || i == m - 1 || j == n - 1)
         {
             check = true;
             res.push_back(s);
             return;
         }
 
-        if (i < n - 1 && !a[i + 1][j] && !ok[i + 1][j])
+        if (i < m - 1 && !a[i + 1][j] && !ok[i + 1][j])
         {
             ok[i][j] = 1;
             Try(i + 1, j, s + "D"); //down
@@ -83,20 +84,65 @@ void Try(int i, int j, string s)
     }
 }
 
+void PrintToado()
+{
+    for (int i = 0; i < res.size(); i++)
+    {
+        // cout << res[i] << endl;
+        // Oy = x,  Ox = y
+        int a = y, b = x;
+        string t = res[i];
+        for (int j = 0; j < t.length(); j++)
+        {
+            if (t[j] == 'D')
+            {
+                cout << "(" << a << "," << b + 1 << ") ";
+                b++;
+            }
+
+            if (t[j] == 'T')
+            {
+                cout << "(" << a << "," << b - 1 << ") ";
+                b--;
+            }
+
+            if (t[j] == 'R')
+            {
+                cout << "(" << a + 1 << "," << b << ") ";
+                a++;
+            }
+
+            if (t[j] == 'L')
+            {
+                cout << "(" << a - 1 << "," << b << ") ";
+                a--;
+            }
+        }
+        cout << endl;
+    }
+}
+
+void PrintHuong()
+{
+    cout << "(Diem hien tai se la diem bat dau ban di)\n(D: Down, T: Top, L: Left, R: Right)\n";
+    for (int i = 0; i < res.size(); i++)
+    {
+        cout << res[i] << endl;
+    }
+}
+
 int main()
 {
     srand(time(0));
-    int i, j;
     res.clear();
 
     genArray();
 
     PrintArr(m, n);
     cout << "nhap vi tri hien tai (i : so hang, j : so cot):";
-    cin >> i >> j;
-    cout << "(Diem hien tai se la diem bat dau ban di)\n(D: Down, T: Top, L: Left, R: Right)\n";
+    cin >> x >> y;
 
-    Try(i, j, "");
+    Try(x, y, "");
 
     if (!res.size())
     {
@@ -105,9 +151,43 @@ int main()
     else
     {
         cout << "So phuong an tim duoc la : " << res.size() << endl;
-        for (int i = 0; i < res.size(); i++)
+        int c;
+        do
         {
-            cout << res[i] << endl;
-        }
+            cout << "Chon kieu in ra ket qua:\n";
+            cout << "1. In theo toa do\n";
+            cout << "2. In theo huong (D: Down, T: Top, L: Left, R: Right) \n";
+            cout << "3. Show ma tran \n";
+            cout << "0. Thoat \n";
+            cout << "> ";
+            while (cin >> c && c != 1 && c != 2  && c != 3 && c != 0)
+            {
+                cout << "\nNO FEATURE!\nAgain: ";
+            }
+            switch (c)
+            {
+            case 1:
+                PrintToado();
+                system("pause");
+                system("cls");
+                break;
+
+            case 2:
+                PrintHuong();
+                system("pause");
+                system("cls");
+                break;
+             case 3:
+                PrintArr(m,n);
+                system("pause");
+                system("cls");
+                break;
+            case 0:
+                cout << "Tam biet\n";
+                break;
+            default:
+                break;
+            }
+        }while(c != 0);
     }
 }
