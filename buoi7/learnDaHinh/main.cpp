@@ -1,6 +1,7 @@
 #include "sinhvien.h"
 #include "giaovien.h"
 
+
 void NhapGV(vector<Nguoi *> &p, int n)
 {
     for (int i = 0; i < n; i++)
@@ -71,6 +72,29 @@ void showALL(vector<Nguoi *> &p)
     }
 }
 
+void tangluong(vector<Nguoi *> &p){
+    cout << endl;
+    string name;
+    cout << "Nhap Ho va ten GV can ++luong : ";
+    fflush(stdin);
+    getline(cin,name);
+    int index=0;
+    for (int i = 0; i < p.size(); i++)
+    {
+        index++;
+        if(p[i]->getName() == name){
+            GV *check = dynamic_cast<GV *>(p[i]);
+            check->tangluong();
+            cout << "Tang luong thanh cong !!\n";
+            return;
+        }
+    }
+    if(index == p.size()){
+        cout << "khong tim thay GV\n";
+        cout << "Ban can viet dung in hoa (vd : Chu Tuan Kiet)\n";
+    }
+}
+
 void pressAnyKey()
 {
     system("pause");
@@ -94,11 +118,15 @@ int main()
         cout << "\t Press 3. Show list Giao vien.\n";
         cout << "\t Press 4. Show list Sinh vien.\n";
         cout << "\t Press 5. Show ALL.\n";
+        cout << "\t______________________________\n";
+        cout << "\t Press 6. Tang luong cho Giao vien\n";
+        
 
         cout << "\t Press 0. Exit.\n";
         cout << "Press:";
 
-        while (cin >> CatchKey && CatchKey != 1 && CatchKey != 2 && CatchKey != 3 && CatchKey != 4 && CatchKey != 5 && CatchKey != 0)
+        while (cin >> CatchKey && CatchKey != 1 && CatchKey != 2 && CatchKey != 3 && CatchKey != 4 
+        && CatchKey != 5&& CatchKey != 6 && CatchKey != 0)
         {
             cout << "\nNO FEATURE!\nAgain: ";
         }
@@ -148,6 +176,10 @@ int main()
         case 5:
             cout << "Thong tin SV GV : ";
             showALL(p);
+            pressAnyKey();
+            break;
+        case 6:
+            tangluong(p);            
             pressAnyKey();
             break;
         default:

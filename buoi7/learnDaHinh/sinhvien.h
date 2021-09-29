@@ -14,7 +14,7 @@ public:
     void Nhap()
     {
         Nguoi::Nhap();
-        cout << "nhap diem cua sv : ";
+        cout << "Nhap diem cua sv : ";
         cin >> diemtb;
     }
     void Xuat(){
@@ -30,8 +30,10 @@ public:
             cout << "Gioi\n";
         }else if(diemtb >= 6 && diemtb < 8){
             cout << "Kha\n";
-        }else{
+        }else if(diemtb > 4 && diemtb < 6){
             cout << "Trung binh\n";
+        }else{
+            cout << "Yeu\n";
         }
     }
 

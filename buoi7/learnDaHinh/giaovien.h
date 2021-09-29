@@ -19,7 +19,7 @@ public:
     {
         Nguoi::Nhap();
 
-        cout << "nhap hs luong : ";
+        cout << "Nhap hs luong : ";
         cin >> base;
         while (cin.fail())
         {
@@ -45,7 +45,7 @@ public:
     }
     void tangluong()
     {
-        cout << "Nhap he so de tang luong : ";
+        cout << "Thay doi he so de tang luong : ";
         cin >> base;
         tinhluong();
     }

@@ -19,16 +19,17 @@ public:
     ~Nguoi(){};
     virtual void Nhap()
     {
-        cout << "nhap ho ten :";
+        cout << "Nhap ho ten :";
         fflush(stdin);
         getline(cin, name);
-        cout << "nhap nam sinh : ";
+        name = chuanhoa(name);
+        cout << "Nhap nam sinh : ";
         cin >> birth;
-        cout << "nhap gioi tinh : (nam : 1)( nu : 0 )";
+        cout << "Nhap gioi tinh : (nam : 1)( nu : 0 )";
         while (cin >> gender && gender != 1 && gender != 0 )
         {
             cout << "Xin loi! Chi co 2 gioi tinh!!\n";
-            cout << "nhap gioi tinh : (nam : 1)( nu : 0 )";
+            cout << "Nhap gioi tinh : (nam : 1)( nu : 0 )";
         }
     }
     virtual void Xuat()
@@ -42,4 +43,34 @@ public:
             cout <<  "Nu" << endl;
         }
     }
+
+    string getName(){
+        return name;
+    }
+    string chuanhoa(string &a);
 };
+
+
+string Nguoi::chuanhoa(string &a)
+{
+    int n = a.length();
+    int i;
+    if (a[0] != 32)
+    {
+        if (a[0] > 96 && a[0] < 123)
+        {
+            a[0] -= 32;
+        }
+    }
+    for (i = 1; i < n; i++)
+    {
+        if (a[i] == 32)
+        {
+            if (a[i + 1] > 96 && a[i + 1] < 123)
+            {
+                a[i + 1] -= 32;
+            }
+        }
+    }
+    return a;
+}
