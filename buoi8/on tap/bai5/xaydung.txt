@@ -1,0 +1,29 @@
+
+
+NhanSu{
+    string maNhanSu;
+    string name;
+    string birth;
+    bool gender;
+
+}
+
+HopDong : NhanSu{
+    string loaihopdong;
+}
+
+BienChe " NhanSu{
+    int year;
+}
+
+DanhSachNhanSu{
+    int n;
+
+    void themNhansu();
+    void themHopDong();
+    void themBienChe();
+    void TimKiemtheoID();
+    void SoluongNhansuBienche();
+
+}
+
