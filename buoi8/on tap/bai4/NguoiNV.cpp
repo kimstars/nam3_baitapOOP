@@ -44,40 +44,15 @@ public:
     }
     void Xuat()
     {
-        cout << "\nTen la: " << name;
-        cout << "\nNgay Thang Nam Sinh: " << ngaysinh;
-        cout << "\nDia Chi Thuong Tru: " << quequan;
-        cout << "\nTuoi La: " << tuoi;
+        cout << "\nTen la: " << name<<endl;
+        cout << "\nNgay Thang Nam Sinh: " << ngaysinh<<endl;
+        cout << "\nDia Chi Thuong Tru: " << quequan<<endl;
+        cout << "\nTuoi La: " << tuoi<<endl;
     }
-    int operator>(Nguoi n)
+    int operator>(const Nguoi &n)
     {
         Nguoi m;
         if (m.tuoi > n.tuoi)
-        {
-            return 1;
-        }
-        else
-        {
-            return 0;
-        }
-    }
-    int operator<(Nguoi n)
-    {
-        Nguoi m;
-        if (m.tuoi < n.tuoi)
-        {
-            return 1;
-        }
-
-        else
-        {
-            return 0;
-        }
-    }
-    int operator=(Nguoi n)
-    {
-        Nguoi m;
-        if (m.tuoi == n.tuoi)
         {
             return 1;
         }
@@ -130,15 +105,14 @@ public:
     void Xuat()
     {
         Nguoi::Xuat();
-        cout << "\nTien Luong cua Nhan Vien la: " << tienluong;
-        cout << "\nChuc Vu Cua Nhan Vien la: " << chucvu;
+        cout << "\nTien Luong cua Nhan Vien la: " << tienluong<<endl;
+        cout << "\nChuc Vu Cua Nhan Vien la: " << chucvu<<endl;
     }
     float getTienluong()
     {
         return tienluong;
     }
 };
-
 class Quanli
 {
     NhanVien *NV;
@@ -231,8 +205,6 @@ public:
         }
     }
 };
-
-
 int main()
 {
     Quanli QL(2);

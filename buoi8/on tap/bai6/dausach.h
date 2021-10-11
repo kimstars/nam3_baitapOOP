@@ -14,17 +14,7 @@ public :
         getline(cin, name);
     }
 
-    void addBook(){
-        cout << "nhap so luong sach them vao " << name << " : "; 
-        cin >> n;
-        for (int i = 0; i < n; i++)
-        {      
-            cout << "Nhap sach thu " << i+1 << endl;
-            listBook.push_back(new dausach());
-            listBook[listBook.size()-1]->Nhap();
-            listBook[listBook.size()-1]->setType(name);
-        }  
-    }
+    
     string getName(){
         return name;
     }

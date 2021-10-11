@@ -26,21 +26,21 @@ public:
         cout << "Nhap ten sach : ";
         fflush(stdin);
         getline(cin, name);
-        cout << "Nhap tac gia sach " << name << " : ";
+        cout << "Nhap tac gia sach '" << name << "' : ";
         fflush(stdin);
         getline(cin, author);
-        cout << "Nha xuat ban sach " << name << " : ";
+        cout << "Nha xuat ban sach '" << name << "' : ";
         fflush(stdin);
         getline(cin, nxb);
-        // cout << "Nhap the loai sach " << name << " : ";
+        // cout << "Nhap the loai sach '" << name << "' : ";
         // fflush(stdin);
         // getline(cin, type);
-        cout << "Nhap gia ca sach  " << name << " : ";
+        cout << "Nhap gia ca sach  '" << name << "' : ";
         cin >> price;
         while (cin.fail())
         {
             cout << "Vui long nhap so tu nhien. \n";
-            cout << "Nhap gia ca sach  " << name << " : ";
+            cout << "Nhap gia ca sach  '" << name << "' : ";
             cin.clear();
             cin.ignore(256, '\n');
             cin >> price;
@@ -52,10 +52,16 @@ public:
     {
         this->type = type;
     }
+    string getType(){
+        return type;
+    }
+    string getName(){
+        return name;
+    }
 
     void Xuat()
     {
-        cout << "Sach  " <<setw(15)<< name << " | ";
+        cout << "Sach  " <<left <<setw(30)<< name << " | ";
         cout << "Tac gia :" <<setw(10)<< author << " | ";
         cout << "Nha xuat ban :" <<setw(10)<< nxb << " | ";
         cout << "The loai :" <<setw(10)<< type << " | ";

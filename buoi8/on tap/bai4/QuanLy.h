@@ -2,7 +2,7 @@
 
 class Quanli
 {
-    NhanVien NV[20];
+    NhanVien *NV;
     int n;
 
 public:
@@ -10,17 +10,17 @@ public:
     {
         this->n = n;
     }
-    // Quanli(NhanVien *NV)
-    // {
-    //     for (int i = 0; i < sizeof(NV); i++)
-    //     {
-    //         this->NV = NV;
-    //     }
-    // }
+    Quanli(NhanVien *NV)
+    {
+        for (int i = 0; i < sizeof(NV); i++)
+        {
+            this->NV = NV;
+        }
+    }
 
     void Nhap()
     {
-        // NV = new NhanVien[n];
+        NV = new NhanVien[n];
         for (int i = 0; i < n; i++)
         {
             NV[i].Nhap();
@@ -44,7 +44,7 @@ public:
             {
                 if (NV[i].getTienluong() > NV[j].getTienluong())
                 {
-                    NV[i].swap(NV[j]);
+                    swap(NV[i], NV[j]);
                 }
             }
         }
@@ -76,16 +76,6 @@ public:
             }
         }
     }
-
-    bool cmp(NhanVien &a, NhanVien &b)
-    {
-        return a.getTienluong() < b.getTienluong();
-    }
-    void SapxepLuong()
-    {
-       sort(NV[0], NV[n-1], cmp);
-    }
-
     void TimKiem()
     {
         float max = NV[0].getTienluong();

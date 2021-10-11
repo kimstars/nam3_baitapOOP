@@ -1,8 +1,9 @@
 #include "Nguoi.h"
 
 class NhanVien : public Nguoi
+
 {
-private:
+public:
     float tienluong;
     string chucvu;
 
@@ -27,28 +28,16 @@ public:
     {
         Nguoi::Xuat();
         cout << "\nTien Luong cua Nhan Vien la: " << tienluong;
-        cout << "\nChuc Vu Cua Nhan Vien la: " << chucvu;
+        cout << "\nChuc Vu Cua Nhan Vien la: " << chucvu << endl;
     }
     float getTienluong()
     {
         return tienluong;
     }
 
-    void swap(NhanVien &p){
-        NhanVien temp(p.name, p.ngaysinh, p.quequan, p.tuoi, p.tienluong, p.chucvu);
-
-        p.name= this->name;
-        p.ngaysinh = this->ngaysinh;
-        p.quequan = this->quequan;
-        p.tuoi = this->tuoi;
-        p.tienluong = this->tienluong;
-        p.chucvu = this->chucvu;
-
-        this->name= temp.name;
-        this->ngaysinh = temp.ngaysinh;
-        this->quequan = temp.quequan;
-        this->tuoi = temp.tuoi;
-        this->tienluong = temp.tienluong;
-        this->chucvu = temp.chucvu;
+    bool operator>(const NhanVien &a) const {
+        return tienluong > a.tienluong;
     }
+
+
 };

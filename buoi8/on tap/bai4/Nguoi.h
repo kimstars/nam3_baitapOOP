@@ -7,14 +7,17 @@ using namespace std;
 
 class Nguoi
 {
-public:
+protected:
     string name;
     string ngaysinh;
     string quequan;
     int tuoi;
 
 public:
-    Nguoi() {};
+    Nguoi() {
+        name = ngaysinh = quequan = "";
+        tuoi = 0;
+    };
     Nguoi(string name, string ngaysinh, string quequan, int tuoi)
     {
         this->name = name;
@@ -39,48 +42,24 @@ public:
     }
     void Xuat()
     {
-        cout << "\nTen la: " << name;
-        cout << "\nNgay Thang Nam Sinh: " << ngaysinh;
-        cout << "\nDia Chi Thuong Tru: " << quequan;
-        cout << "\nTuoi La: " << tuoi;
+        cout << "\nTen la: " << name<<endl;
+        cout << "\nNgay Thang Nam Sinh: " << ngaysinh<<endl;
+        cout << "\nDia Chi Thuong Tru: " << quequan<<endl;
+        cout << "\nTuoi La: " << tuoi<<endl;
     }
-    int operator>(Nguoi n)
-    {
-        Nguoi m;
-        if (m.tuoi > n.tuoi)
-        {
-            return 1;
-        }
-        else
-        {
-            return 0;
-        }
-    }
-    int operator<(Nguoi n)
-    {
-        Nguoi m;
-        if (m.tuoi < n.tuoi)
-        {
-            return 1;
-        }
-
-        else
-        {
-            return 0;
-        }
-    }
-    int operator=(Nguoi n)
-    {
-        Nguoi m;
-        if (m.tuoi == n.tuoi)
-        {
-            return 1;
-        }
-        else
-        {
-            return 0;
-        }
-    }
+    // int operator>(const Nguoi &n)
+    // {
+    //     Nguoi m;
+    //     if (m.tuoi > n.tuoi)
+    //     {
+    //         return 1;
+    //     }
+    //     else
+    //     {
+    //         return 0;
+    //     }
+    // }
+   
     int getTuoi()
     {
         return tuoi;
