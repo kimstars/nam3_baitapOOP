@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include<iomanip>
 using namespace std;
 
 class Nguoi
@@ -36,8 +37,8 @@ public:
         cin >> namsinh;
         tinhtuoi();
         cout << "\nHay Nhap Que Quan: ";
-        getline(cin, quequan);
         fflush(stdin);
+        getline(cin, quequan);
     }
     void tinhtuoi()
     {
@@ -45,10 +46,10 @@ public:
     }
     void Xuat()
     {
-        cout << "\nTen la: " << name << endl;
-        cout << "\nNgay Thang Nam Sinh: " << namsinh << endl;
-        cout << "\nDia Chi Thuong Tru: " << quequan << endl;
-        cout << "\nTuoi : " << tuoi << endl;
+        cout <<left <<  "Ten: " << setw(15) << name ;
+        cout  << ", Nam Sinh: " << setw(5)<< namsinh;
+        cout  << ", Dia Chi Thuong Tru: " <<setw(20)<< quequan ;
+        cout << ", Tuoi: " << setw(5) << tuoi ;
     }
     bool operator>(const Nguoi &n)
     {
@@ -66,10 +67,6 @@ public:
     {
         return namsinh;
     }
-    int getTuoi()
-    {
-        return tuoi;
-    }
     string getName()
     {
         return name;
@@ -77,5 +74,8 @@ public:
     string getQueQuan()
     {
         return quequan;
+    }
+    int getTuoi(){
+        return tuoi;
     }
 };

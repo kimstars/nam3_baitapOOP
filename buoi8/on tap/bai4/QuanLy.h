@@ -1,26 +1,21 @@
 #include "NhanVien.h"
 
-class Quanli
+class QuanLy
 {
     NhanVien *NV;
     int n;
 
 public:
-    Quanli(int n)
+    QuanLy(int n)
     {
         this->n = n;
+        NV = new NhanVien[n];
     }
-    Quanli(NhanVien *NV)
-    {
-        for (int i = 0; i < sizeof(NV); i++)
-        {
-            this->NV = NV;
-        }
-    }
+    QuanLy(){};
 
     void Nhap()
     {
-        NV = new NhanVien[n];
+        cout << "Nhap so nhan vien : ";
         for (int i = 0; i < n; i++)
         {
             NV[i].Nhap();
@@ -90,5 +85,12 @@ public:
             if (NV[i].getTienluong() == max)
                 NV[i].Xuat();
         }
+    }
+
+   
+    void pressAnyKey()
+    {
+        system("pause");
+        system("cls");
     }
 };

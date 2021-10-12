@@ -14,8 +14,19 @@ public:
     {
         cout << "Nhap ngay :";
         cin >> day;
+        while (day > 31 || day <= 0)
+        {
+            cout << "Nhap ngay :";
+            cin >> day;
+        }
         cout << "Nhap thang :";
         cin >> month;
+
+        while (month > 12 || month <= 0)
+        {
+            cout << "Nhap thang :";
+            cin >> month;
+        }
         cout << "Nhap nam :";
         cin >> year;
     }
@@ -23,10 +34,15 @@ public:
     {
         cout << "Ngay: " << day << endl;
         cout << "Thang: " << month << endl;
-        cout << "Nam: "<< year << endl;
+        cout << "Nam: " << year << endl;
     }
-    int getYear(){
+    int getYear()
+    {
         return year;
+    }
+    int getMonth()
+    {
+        return month;
     }
     static bool NamNhuan(int year)
     {
@@ -35,5 +51,31 @@ public:
         if (year % 4 == 0 && year % 100 != 0)
             return true;
         return false;
+    }
+
+    static int SoNgayTrongThang(int month)
+    {
+        cout << "Thang " << month;
+        switch (month)
+        {
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:
+            cout << " co 31 ngay\n";
+            break;
+        case 2:
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+            cout << " co 30 ngay\n";
+            break;
+        default:
+            break;
+        }
     }
 };

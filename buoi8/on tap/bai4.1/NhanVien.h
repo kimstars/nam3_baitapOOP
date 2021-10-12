@@ -9,8 +9,9 @@ public:
 
 public:
     NhanVien() {}
-    NhanVien(string name, int namsinh, string quequan,float tienluong, string chucvu) : Nguoi(name, namsinh, quequan)
+    NhanVien(string name, int ngaysinh, string quequan, float tienluong, string chucvu) : Nguoi(name, ngaysinh, quequan)
     {
+
         this->tienluong = tienluong;
         this->chucvu = chucvu;
     }
@@ -27,17 +28,16 @@ public:
     void Xuat()
     {
         Nguoi::Xuat();
-        cout << "\nTien Luong cua Nhan Vien la: " << tienluong;
-        cout << "\nChuc Vu Cua Nhan Vien la: " << chucvu << endl;
+        cout <<", Tien Luong : "<<setw(20) << tienluong;
+        cout << ", Chuc Vu : " <<setw(10)<< chucvu << endl;
     }
     float getTienluong()
     {
         return tienluong;
     }
 
-    bool operator>(const NhanVien &a) const {
-        return tienluong > a.tienluong;
+    bool operator<(const NhanVien &a) const {
+        return tienluong < a.tienluong;
     }
-
 
 };
