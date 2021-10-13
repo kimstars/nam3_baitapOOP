@@ -53,7 +53,7 @@ public:
         return false;
     }
 
-    static int SoNgayTrongThang(int month)
+     static void SoNgayTrongThang(int month,int year)
     {
         cout << "Thang " << month;
         switch (month)
@@ -68,6 +68,15 @@ public:
             cout << " co 31 ngay\n";
             break;
         case 2:
+            if (NamNhuan(year))
+            {
+                cout << " co 29 ngay\n";
+            }
+            else
+            {
+                cout << " co 28 ngay\n";
+            }
+            break;
         case 4:
         case 6:
         case 9:

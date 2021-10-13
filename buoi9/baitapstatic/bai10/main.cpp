@@ -2,9 +2,11 @@
 
 int main()
 {
-    Date a(12, 2, 2000);
-    // a.Nhap();
-    Date b(12, 3, 2000);
+    Date a;
+    a.Nhap();
+    Date b;
+    b.Nhap();
+
     
     int res = Date::tinhNgay(a,b);
     cout << res;

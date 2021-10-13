@@ -4,7 +4,7 @@ int main()
 {
     Date a(12, 4, 2000);
     // a.Nhap();
-    a.SoNgayTrongThang(a.getMonth());
+    a.SoNgayTrongThang(a.getMonth(),a.getYear());
     int month;
     cout << "Kiem tra so ngay trong thang.\nNhap thang: ";
     cin >> month;
@@ -14,5 +14,5 @@ int main()
         cin >> month;
     }
 
-    Date::SoNgayTrongThang(month);
+    Date::SoNgayTrongThang(month,a.getYear());
 }

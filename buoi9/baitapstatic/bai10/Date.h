@@ -12,6 +12,7 @@ public:
     Date(int day, int month, int year) : day(day), month(month), year(year){};
     void Nhap()
     {
+        nhap:;
         cout << "Nhap ngay :";
         cin >> day;
         while (day > 31 || day <= 0)
@@ -29,6 +30,11 @@ public:
         }
         cout << "Nhap nam :";
         cin >> year;
+
+        if(!isdate()){
+            cout <<"Ban nhap sai ngay. Hay nhap lai!!\n";
+            goto nhap;
+        }
     }
     void Xuat()
     {
@@ -44,6 +50,18 @@ public:
     {
         return month;
     }
+    bool isdate()
+    {
+        int a[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        if (NamNhuan(year))
+            a[1] = 29;
+        if (month < 1 || month > 12)
+            return 0;
+        if (day < 1 || day > a[month - 1])
+            return 0;
+        return 1;
+    }
+
     static bool NamNhuan(int year)
     {
         if (year % 400 == 0)
@@ -52,8 +70,9 @@ public:
             return true;
         return false;
     }
+    
 
-    static void SoNgayTrongThang(int month)
+    static void SoNgayTrongThang(int month,int year)
     {
         cout << "Thang " << month;
         switch (month)
@@ -68,6 +87,15 @@ public:
             cout << " co 31 ngay\n";
             break;
         case 2:
+            if (NamNhuan(year))
+            {
+                cout << " co 29 ngay\n";
+            }
+            else
+            {
+                cout << " co 28 ngay\n";
+            }
+            break;
         case 4:
         case 6:
         case 9:
@@ -79,32 +107,40 @@ public:
         }
     }
 
-    static int tinhNgay(Date a,Date b){
+    static int tinhNgay(Date a, Date b)
+    {
         int date = 0;
         int dateOfMonth = 0;
         int dateOfYear = 0;
-        
-        for (int i = a.year; i < b.year ; i++)
+
+        for (int i = a.year; i < b.year; i++)
         {
-            if(NamNhuan(i)){
+            if (NamNhuan(i))
+            {
                 dateOfYear += 366;
-            }else{
+            }
+            else
+            {
                 dateOfYear += 365;
             }
         }
-        int dateMonth[]={31,28,31,30,31,30,31,31,30,31,30,31};
+        int dateMonth[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
-        if (NamNhuan(b.year)) dateMonth[1]=29;  
-        
-        if(a.month > b.month){
+        if (NamNhuan(b.year))
+            dateMonth[1] = 29;
+
+        if (a.month > b.month)
+        {
             for (int i = a.month; i < b.month; i++)
             {
-                dateOfMonth -= dateMonth[i-1];
+                dateOfMonth -= dateMonth[i - 1];
             }
-        }else{
+        }
+        else
+        {
             for (int i = a.month; i < b.month; i++)
             {
-                dateOfMonth += dateMonth[i-1];
+                dateOfMonth += dateMonth[i - 1];
             }
         }
 
