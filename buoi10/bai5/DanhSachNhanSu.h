@@ -18,7 +18,7 @@ public:
     void QuanLy();
     void Show();
     void TimKiemtheoTen();
-
+    void TimKiemTen();
     void pressAnyKey()
     {
         system("pause");
@@ -147,6 +147,22 @@ void DanhSachNhanSu::TimKiemtheoTen(){
     }
 }
 
+void DanhSachNhanSu::TimKiemTen(){
+    string name;
+    cout << "Nhap ten nhan vien can tim kiem : ";
+    fflush(stdin);
+    getline(cin,name);
+    for (int i = 0; i < Nhanvien.size(); i++)
+    {
+        if (Nhanvien[i]->checkName(name))
+        {
+            Nhanvien[i]->Print();
+            break;
+        }
+    }
+}
+
+
 void DanhSachNhanSu::QuanLy()
 {
     cout << "++++++++++++++++++++++++++++\n";
@@ -159,7 +175,7 @@ void DanhSachNhanSu::QuanLy()
         cout << "\t Press 2. Them nhieu nhan su.\n";
         cout << "\t______________________________\n";
         cout << "\t Press 3. Tim kiem theo ma nhan su.\n";
-        cout << "\t Press 4. Tim kiem theo ma nhan su.\n";
+        cout << "\t Press 4. Tim kiem theo ten nhan su.\n";
         cout << "\t______________________________\n";
 
         cout << "\t Press 5. Show list nhan su.\n";
@@ -192,7 +208,7 @@ void DanhSachNhanSu::QuanLy()
             pressAnyKey();
             break;
         case 4:
-            TimKiemtheoTen();
+            TimKiemTen();
             pressAnyKey();
             break;
         case 5:

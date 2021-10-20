@@ -53,7 +53,7 @@ void BienChe::Print()
 {
     cout << "NV Bien che | ";
     NhanSu::Print();
-    cout  << "He so luong : "<< setw(10) << base <<  "phu cap :"<<setw(10) << phucapcv; 
+    cout  << ", He so luong : "<< setw(10) << base <<  ", Phu cap :"<<setw(10) << phucapcv; 
     cout << ", Luong : "<<setw(10) << luong << endl;
 }
 

@@ -12,12 +12,23 @@ protected:
     double luong;
 public:
     NhanSu();
+    ~NhanSu();
     string getName();
     string getID();
+    void setName(string name){
+        this->name = name;
+    }
     double getLuong();
     virtual void Nhap();
     virtual void Print();
     virtual void TinhLuong() = 0;
+    bool checkName(string s){
+        if(name == s){
+            return 1;
+        }else{
+            return 0;
+        }
+    }
 };
 
 NhanSu::NhanSu()
