@@ -1,0 +1,19 @@
+Xây dựng lớp Vector. 
+    Mỗi đối tượng của lớp sẽ đại diện cho một vector. 
+    Lớp chứa hàm dựng mặc định, hàm dựng sao chép, hàm hủy, 
+    toán tử gán =; 
+    toán tử <<, >>; +, -, *, 
+    tích của một số và vector;
+    toán tử so sánh ==, =+, =-, =*; 
+    hàm Len-trả về kích thước của vector, 
+    toán tử chỉ số [], 
+    hàm Set-thay đổi giá trị của một phần tử trong dãy.
+
+Xây dựng lớp Matrix kế thừa từ lớp Vector. 
+    Mỗi đối tượng của lớp đại diện cho một ma trận. 
+    Lớp chưa hàm dựng mặc định,
+    hàm tạo sao chép, hàm hủy, toán tử gán; 
+    toán tử <<, >>;
+    các phép toán +,-,*,
+    nhân một số với ma trận; 
+    toán tử (). 

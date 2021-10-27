@@ -5,7 +5,7 @@ using namespace std;
 class Date
 {
 private:
-    int day, month;
+    int day, month, year;
 
 public:
     Date(){};
@@ -23,9 +23,10 @@ public:
     {
         cout << "Ngay: " << day << endl;
         cout << "Thang: " << month << endl;
-        cout << "Nam: "<< year << endl;
+        cout << "Nam: " << year << endl;
     }
-    int getYear(){
+    int getYear()
+    {
         return year;
     }
     static bool NamNhuan(int year)

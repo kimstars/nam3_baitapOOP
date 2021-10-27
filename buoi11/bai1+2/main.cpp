@@ -67,7 +67,6 @@ void ShowALL(vector<Hocvien> &p)
     }
 }
 
-
 void ShowTotNghiep(vector<Hocvien> &p)
 {
     for (int i = 0; i < p.size(); i++)
@@ -103,7 +102,7 @@ void HienthiDS(vector<Hocvien> &p)
         cout << "\t Press 2. Hoc vien duoc THI TOT NGHIEP.\n";
         cout << "\t______________________________\n";
         cout << "\t Press 3. Hoc vien THI LAI\n";
-
+        cout << "\t______________________________\n";
         cout << "\t Press 0. Exit.\n";
         cout << "Press:";
 
@@ -160,10 +159,11 @@ void GhiFile(vector<Hocvien> p)
 {
     ofstream file;
     char str[10];
-    file.open("output.bin", ios::out|ios::binary);
-    if(!file){
-    	cout<<"Error in creating file...\n";
-    	return;
+    file.open("output.bin", ios::out | ios::binary);
+    if (!file)
+    {
+        cout << "Error in creating file...\n";
+        return;
     }
     int n = p.size();
     file.write((char *)(&n), sizeof(n));
@@ -171,9 +171,9 @@ void GhiFile(vector<Hocvien> p)
     for (int i = 0; i < n; i++)
     {
         Hocvien a = p[i];
-        file.write((const char*)&(a), sizeof(Hocvien) );
+        file.write((const char *)&(a), sizeof(Hocvien));
     }
-    cout <<"Ghi file thanh cong!!\n";
+    cout << "Ghi file thanh cong!!\n";
     file.close();
 }
 

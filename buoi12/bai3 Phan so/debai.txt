@@ -1,0 +1,10 @@
+3.	Xây dựng lớp PhanSo có thuộc tính tử số, mẫu số. 
+Các phương thức cho phép nhập, hiện thị phân số, tối giản, cộng, trừ, nhân, chia. 
+Xây dựng hàm khởi tạo mặc định khởi tạo ts=0, ms=1; 
+và hàm khởi tạo với hai tham số truyền vào để khởi tạo giá trị cho ts, ms. 
+Phuong thuc Cong de cong phan so voi 1 so nguyen,phương thức cộng, trừ nhân, chia hai phân số. 
+
+Tạo danh sách các phân số, sắp xếp các phân số theo thứ tự tang dần, giảm dần. 
+Nạp chồng toán tử +,-,*,/,>,<,++,--, +=,-=,*=,/= (theo hai cách), toán tử chèn dòng (<<), 
+trích dòng (>>). 
+Xây dựng hàm nạp chồng theo hai cách, là hàm thành viên (nếu có thể), và hàm bạn.

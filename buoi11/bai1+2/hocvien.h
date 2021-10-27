@@ -2,6 +2,16 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+struct Diem{
+    double diem1;
+    double diem2;
+    double diem3;
+    double diem4;
+    double diem5;
+    double diem6;
+};
+
+
 class Hocvien
 {
 private:
@@ -65,6 +75,7 @@ istream &operator>>(istream &is, Hocvien &h)
     cout << "Nhap ho ten :";
     fflush(stdin);
     fgets(h.name, 20, stdin);
+    strtok(h.name, "\n");
     chuanhoa(h.name);
     cout << "Nhap nam sinh : ";
     is >> h.birth;
