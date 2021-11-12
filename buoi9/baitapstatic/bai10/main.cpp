@@ -2,17 +2,10 @@
 
 int main()
 {
-    Date a(12, 4, 2000);
+    Date a(12, 2, 2000);
     // a.Nhap();
-    a.SoNgayTrongThang(a.getMonth());
-    int month;
-    cout << "Kiem tra so ngay trong thang.\nNhap thang: ";
-    cin >> month;
-    while (month > 12 || month <= 0)
-    {
-        cout << "Nhap thang :";
-        cin >> month;
-    }
-
-    Date::SoNgayTrongThang(month);
+    Date b(12, 3, 2000);
+    
+    int res = Date::tinhNgay(a,b);
+    cout << res;
 }

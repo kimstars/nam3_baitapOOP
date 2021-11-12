@@ -53,7 +53,7 @@ public:
         return false;
     }
 
-    static int SoNgayTrongThang(int month)
+    static void SoNgayTrongThang(int month)
     {
         cout << "Thang " << month;
         switch (month)
@@ -77,5 +77,39 @@ public:
         default:
             break;
         }
+    }
+
+    static int tinhNgay(Date a,Date b){
+        int date = 0;
+        int dateOfMonth = 0;
+        int dateOfYear = 0;
+        
+        for (int i = a.year; i < b.year ; i++)
+        {
+            if(NamNhuan(i)){
+                dateOfYear += 366;
+            }else{
+                dateOfYear += 365;
+            }
+        }
+        int dateMonth[]={31,28,31,30,31,30,31,31,30,31,30,31};
+
+        if (NamNhuan(b.year)) dateMonth[1]=29;  
+        
+        if(a.month > b.month){
+            for (int i = a.month; i < b.month; i++)
+            {
+                dateOfMonth -= dateMonth[i-1];
+            }
+        }else{
+            for (int i = a.month; i < b.month; i++)
+            {
+                dateOfMonth += dateMonth[i-1];
+            }
+        }
+
+        date = b.day - a.day + 1;
+
+        return date + dateOfMonth + dateOfYear;
     }
 };
