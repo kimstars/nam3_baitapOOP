@@ -16,57 +16,17 @@ protected:
     int tuoi;
 
 public:
-    Nguoi()
-    {
-        name = quequan = "";
-        namsinh = tuoi = 0;
-    };
-    Nguoi(string name, int namsinh, string quequan)
-    {
-        this->name = name;
-        this->namsinh = namsinh;
-        this->quequan = quequan;
-        tinhtuoi();
-    }
-    virtual void Nhap()
-    {
-        cout << "\nHay Nhap Ten: ";
-        fflush(stdin);
-        getline(cin, name);
-        cout << "\nHay Nhap Nam Sinh: ";
-        fflush(stdin);
-        cin >> namsinh;
-        tinhtuoi();
-        cout << "\nHay Nhap Que Quan: ";
-        fflush(stdin);
-        getline(cin, quequan);
-    }
+    Nguoi();
+    ~Nguoi(){};
+    Nguoi(string name, int namsinh, string quequan);
+    virtual void Nhap();
 
     friend ostream &operator<<(ostream &, Nguoi &);
     friend istream &operator>>(istream &, Nguoi &);
 
-    void tinhtuoi()
-    {
-        tuoi = 2021 - namsinh;
-    }
-    void Xuat()
-    {
-        cout << left << "Ten: " << setw(15) << name;
-        cout << "| Nam Sinh: " << setw(5) << namsinh;
-        cout << "| Dia Chi : " << setw(20) << quequan;
-        cout << "| Tuoi: " << setw(5) << tuoi;
-    }
-    bool operator>(const Nguoi &n)
-    {
-        if (this->tuoi > n.tuoi)
-        {
-            return 1;
-        }
-        else
-        {
-            return 0;
-        }
-    }
+    void tinhtuoi();
+    void Xuat();
+    bool operator>(const Nguoi &n);
 
     int getNamsinh()
     {
@@ -93,7 +53,6 @@ ostream &operator<<(ostream &os, Nguoi &p)
     cout << "| Nam Sinh: " << setw(5) << p.namsinh;
     cout << "| Dia Chi : " << setw(20) << p.quequan;
     cout << "| Tuoi: " << setw(5) << p.tuoi;
-
 }
 
 istream &operator>>(istream &is, Nguoi &p)
@@ -108,4 +67,56 @@ istream &operator>>(istream &is, Nguoi &p)
     cout << "\nHay Nhap Que Quan: ";
     fflush(stdin);
     getline(is, p.quequan);
+}
+
+Nguoi::Nguoi()
+{
+    name = quequan = "";
+    namsinh = tuoi = 0;
+};
+Nguoi::Nguoi(string name, int namsinh, string quequan)
+{
+    this->name = name;
+    this->namsinh = namsinh;
+    this->quequan = quequan;
+    tinhtuoi();
+}
+void Nguoi::Nhap()
+{
+    cout << "\nHay Nhap Ten: ";
+    fflush(stdin);
+    getline(cin, name);
+    cout << "\nHay Nhap Nam Sinh: ";
+    fflush(stdin);
+    cin >> namsinh;
+    tinhtuoi();
+    cout << "\nHay Nhap Que Quan: ";
+    fflush(stdin);
+    getline(cin, quequan);
+}
+
+ostream &operator<<(ostream &, Nguoi &);
+istream &operator>>(istream &, Nguoi &);
+
+void Nguoi::tinhtuoi()
+{
+    tuoi = 2021 - namsinh;
+}
+void Nguoi::Xuat()
+{
+    cout << left << "Ten: " << setw(15) << name;
+    cout << "| Nam Sinh: " << setw(5) << namsinh;
+    cout << "| Dia Chi : " << setw(20) << quequan;
+    cout << "| Tuoi: " << setw(5) << tuoi;
+}
+bool Nguoi::operator>(const Nguoi &n)
+{
+    if (this->tuoi > n.tuoi)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
 }

@@ -257,7 +257,7 @@ public:
         getline(cin, name);
         for (vector<NhanVien>::iterator i = nv.begin(); i != nv.end(); i++)
         {
-            if ((*i).checkName(name))
+            if (i->checkName(name))
             {
                 char c;
                 cout << "Da tim thay nhan vien " << name << "\nXac nhan xoa NV (y/n) : ";
