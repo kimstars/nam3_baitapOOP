@@ -34,12 +34,13 @@ public:
 
     double hieu(PhanSo &p);
     
-    void operator=(const PhanSo &p);
+    // void operator=(const PhanSo &p);
     bool operator>(const PhanSo &p);
     bool operator<(const PhanSo &p);
     bool operator==(PhanSo &f);
 
     PhanSo operator++(int);
+    
     PhanSo operator++(){
     	a += b;
     	Toigian();
@@ -182,11 +183,11 @@ PhanSo PhanSo::operator*(const PhanSo &p)
     return (*this);
 }
 
-void PhanSo::operator=(const PhanSo &p)
-{
-    a = p.a;
-    b = p.b;
-}
+// void PhanSo::operator=(const PhanSo &p)
+// {
+//     a = p.a;
+//     b = p.b;
+// }
 
 bool PhanSo::operator>(const PhanSo &p)
 {

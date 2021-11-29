@@ -9,6 +9,7 @@ int main()
 
 	PhanSo a(1,2);
 	PhanSo b;
-	b = ++a;
+	b = a++;
+	b++;
 	cout << "a = "<< a << " " << "b = "<< b ;
 }
