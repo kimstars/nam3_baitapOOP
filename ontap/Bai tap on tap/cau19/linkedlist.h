@@ -36,8 +36,6 @@ class LLQueue
 public:
     LLQueue();        // khoi tao
     ~LLQueue();       // xoa
-    void takeFront(T &); // dung tham tri
-    void takeBack(T &);
 
     LLQueue<T> &Enqueue(const T &);
     bool isEmpty() const;
