@@ -84,6 +84,7 @@ void DanhSachNhanSu::themHopDong()
     Nhanvien.push_back(new HopDong());
     Nhanvien[Nhanvien.size() - 1]->Nhap();
 }
+
 void DanhSachNhanSu::themBienChe()
 {
     Nhanvien.push_back(new BienChe());
