@@ -2,14 +2,16 @@
 
 using namespace std;
 
+//Linked list nhưng mà nó là queue
 template <typename T>
-class LinkedList;
+class LLQueue;
+
 
 template <typename T>
 class Node
 {
     // Khai báo là hàm bạn để có thể sử dụng thuộc tính private trong Node
-    friend class LinkedList<T>;
+    friend class LLQueue<T>;
 
 public:
     
@@ -29,17 +31,19 @@ Node<T>::Node(const T &value)
 }
 
 template <typename T>
-class LinkedList
+class LLQueue
 {
 public:
-    LinkedList();        // khoi tao
-    ~LinkedList();       // xoa
+    LLQueue();        // khoi tao
+    ~LLQueue();       // xoa
     void takeFront(T &); // dung tham tri
     void takeBack(T &);
-    LinkedList<T> &insertAtFront(const T &);
-    LinkedList<T> &insertAtBack(const T &);
+
+    LLQueue<T> &Enqueue(const T &);
     bool isEmpty() const;
 	void print();
+
+    T Dequeue();
 private:
     Node<T> *head;
     Node<T> *tail;
@@ -49,12 +53,12 @@ private:
 
 // dinh nghia cac thuoc tinh va phuong thuc cua lop doi tuong
 template <typename T>
-LinkedList<T>::LinkedList() : size(0), ptri(NULL)
+LLQueue<T>::LLQueue() : size(0), ptri(NULL)
 {
     head = tail = NULL;
 }
 template <typename T>
-LinkedList<T>::~LinkedList()
+LLQueue<T>::~LLQueue()
 {
     if (size > 0)
     {
@@ -69,31 +73,9 @@ LinkedList<T>::~LinkedList()
     }
 }
 
-template <typename T>
-LinkedList<T> &LinkedList<T>::insertAtFront(const T &value)
-{
-    Node<T> *tempPtr = new Node<T>(value);
-    if (tempPtr == NULL)
-    {
-        cout << "Tran bo nho" << endl;
-        return *this;
-    }
-    if (size == 0)
-    {
-        head = tail = tempPtr;
-    }
-    else
-    {
 
-        tempPtr->next = head;
-        head = tempPtr;
-    }
-    ++size;
-    ptri = head;
-    return *this;
-}
 template <typename T>
-LinkedList<T> &LinkedList<T>::insertAtBack(const T &value)
+LLQueue<T> &LLQueue<T>::Enqueue(const T &value)
 {
     Node<T> *tempPtr = new Node<T>(value);
     if (tempPtr == NULL)
@@ -115,54 +97,35 @@ LinkedList<T> &LinkedList<T>::insertAtBack(const T &value)
     ptri = head;
     return *this;
 }
+
+
 template <typename T>
-void LinkedList<T>::takeFront(T &i)
+T LLQueue<T>::Dequeue()
 {
+    T retval;
     if (ptri == head)
         ptri = NULL;
     if (size == 0)
         return;
     Node<T> *tempPtr = head;
     head = tempPtr->next;
-    i = tempPtr->data;
+    retval = tempPtr->data;
     delete tempPtr;
     --size;
+    return retval;
 }
 
-template <typename T>
-void LinkedList<T>::takeBack(T &i)
-{
-    if (ptri == tail)
-        ptri = NULL;
-    if (size == 0)
-        return;
-    Node<T> *tempPtr = head;
-    if (tempPtr == tail)
-    {
-        i = tail->data;
-        delete tempPtr;
-        head = tail = ptri = NULL;
-        --size;
-        return;
-    }
-    while (tempPtr->next != tail)
-        tempPtr = tempPtr->next;
-    i = tail->data;
-    delete tail;
-    tail = tempPtr;
-    tempPtr->next = NULL;
-    --size;
-}
+
 
 template <typename T>
-bool LinkedList<T>::isEmpty() const
+bool LLQueue<T>::isEmpty() const
 {
     return (size > 0) ? false : true;
 }
 
 
 template <class T>
-void LinkedList<T>::print()
+void LLQueue<T>::print()
 {
     Node<T> *temp = head;
 
@@ -185,3 +148,5 @@ void LinkedList<T>::print()
         }
     }
 }
+
+
