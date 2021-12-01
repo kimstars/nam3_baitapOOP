@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
-#include <bits/stdc++.h>
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -25,6 +25,7 @@ class GiaoDich {
             cout << "Nhap ma giao dich : ";
             fflush(stdin);
             getline(cin, magiaodich);
+            // cin >> magiaodich;
             cout << "Nhap ngay giao dich :";
             cin >> ngaygiaodich;
             cout << "Nhap don gia :";
@@ -37,7 +38,7 @@ class GiaoDich {
             printf("Ma giao dich: %s | Ngay giao dich: %d| Don gia: %d | So luong: %d| ",magiaodich, ngaygiaodich, dongia, soluong);
 
         }
-        virtual void TinhTriGia() = 0;
+        virtual void TinhTriGia(){};
 
         virtual int getTriGia(){
             return trigia;

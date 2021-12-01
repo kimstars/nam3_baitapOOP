@@ -42,10 +42,8 @@ public:
     }
     void Xuat()
     {
-
         for (int i = 0; i < GD.size(); i++)
         {
-
             GD[i]->Xuat();
             cout << endl;
         }
@@ -69,7 +67,7 @@ public:
         default:
             break;
         }
-        n++;
+
     }
 
     void themGDVang(vector<GiaoDich *> &GD)
@@ -176,7 +174,7 @@ public:
 
         if (count)
         {
-            cout << "Danh sach nay co " << count << "nguoi\n";
+            cout << "Danh sach nay co " << count << "GD\n";
             cout << "Trung binh tri gia : " << sum / GD.size() << endl;
         }
         else
@@ -202,7 +200,7 @@ public:
         }
         if (count)
         {
-            cout << "Danh sach nay co " << count << " nguoi\n";
+            cout << "Danh sach nay co " << count << " GD\n";
         }
         else
         {
@@ -273,38 +271,43 @@ public:
         {
             for (int i = 0; i < n; i++)
             {
-                fout.write((char *)(&GD[i]), sizeof(GD[i]));
+                GiaoDich *a = reinterpret_cast<GiaoDich*> (GD[i]);
+                a->Xuat();
+                fout.write((char*)(a), sizeof(GD[i]));
             }
+            cout << "\nWrite successful !\n";
         }
         fout.close();
-        cout << "\nWrite successful !\n";
     }
 
     void readFile(vector<GiaoDich *> &GD)
     {
-        // fstream fin;
-        // fin.open("out.bin", ios::in | ios::binary);
-        // int count = 0;
-        // if (fin.good())
-        // {
-        //     fin.seekg(0, ios::beg);
-        //     while (!fin.eof())
-        //     {
-        //         GiaoDich a;
-        //         if (fin.read(reinterpret_cast<char *>(&a), sizeof(a)))
-        //         {
-        //             a.Xuat();
-        //             GD.push_back(&a);
-        //             count++;
-        //         }
-        //     }
-        //     n = count;
-        //     cout << "\nRead successful !\n";
-        // }
-        // else
-        // {
-        //     cout << "error open file \n";
-        // }
-        // fin.close();
+        fstream fin;
+        fin.open("out.bin", ios::in | ios::binary);
+        int count = 0;
+        if (fin.good())
+        {
+            fin.seekg(0, ios::beg);
+            while (!fin.eof())
+            {
+                GiaoDichVang *a;
+                if (fin.read(reinterpret_cast<char *>(a), sizeof(GiaoDichVang)))
+                {
+                    // GiaoDichVang *b =  reinterpret_cast<GiaoDichVang*> (&a);
+                    a->Xuat();
+                    GD.push_back(new GiaoDichVang);
+                    GD[GD.size()-1] = a;
+                    // GD.push_back(&a);
+                    count++;
+                }
+            }
+            n = count;
+            cout << "\nRead successful !\n";
+        }
+        else
+        {
+            cout << "error open file \n";
+        }
+        fin.close();
     }
 };

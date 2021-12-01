@@ -17,11 +17,12 @@ class GiaoDichVang: public GiaoDich {
             cout << "Nhap loai vang : ";
             fflush(stdin);
             getline(cin, loaiVang);
+            // cin >> loaiVang;
             TinhTriGia();
 
         }
         void Xuat(){
-            cout << "GD tien te: ";
+            cout << "GD vang: ";
             GiaoDich::Xuat();
             printf("Loai vang: %s| Tri gia: %d\n",loaiVang,trigia);
         }

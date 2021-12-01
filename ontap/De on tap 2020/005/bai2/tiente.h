@@ -18,6 +18,7 @@ class GiaoDichTienTe: public GiaoDich {
             cout << "Nhap loai tien te : ";
             fflush(stdin);
             getline(cin,loaitiente);
+            // cin >> loaitiente;
             TinhTriGia();
 
         }
